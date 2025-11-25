@@ -1,8 +1,13 @@
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
+import Main from "./components/Main"
 function App() {
 
   return (
     <>
-      <h1>Welcome to CAT!</h1>
+      <Navbar />
+      <Main/>
+      <Footer/>
     </>
   )
 }
