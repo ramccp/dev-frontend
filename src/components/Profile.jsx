@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
+
 function Profile(){
+    const user = useSelector((state)=>state.user)
     return(
-        <h1>This is profile component</h1>
+       user ? <h1>{user.firstName} Profile</h1> : <h1>Please login to view this page!</h1>
     )
 }
 
