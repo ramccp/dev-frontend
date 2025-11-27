@@ -1,6 +1,10 @@
 import { useSelector } from "react-redux";
 function Navbar(){
+  
   const user = useSelector((store)=>store.user);
+  function handleLogout(){
+    
+  }
     return(
         <div className="navbar bg-base-200 shadow-sm">
   <div className="flex-1">
@@ -28,7 +32,7 @@ function Navbar(){
           </a>
         </li>
         <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <li onClick={handleLogout}><a>Logout</a></li>
       </ul>
     </div>}
   </div>

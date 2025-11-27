@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
+import ProfileCard from "./ProfileCard";
 
 function Profile(){
     const user = useSelector((state)=>state.user)
     return(
-       user ? <h1>{user.firstName} Profile</h1> : <h1>Please login to view this page!</h1>
+       user ? <ProfileCard user={user} /> : <h1 className="my-10 text-xl">Please login to view this page!</h1>
     )
 }
 
