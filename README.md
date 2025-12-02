@@ -16,3 +16,9 @@
         - useDispatch to get dispatch function
         - useSelector to access user state (subscribe to store)
         - On successful login, dispatch addUser with response data
+
+
+## On logout:
+
+- dispatch(removerUser())
+- navigate to login

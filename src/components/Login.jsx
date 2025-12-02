@@ -13,7 +13,7 @@ function Login() {
 
   console.log(user);
   async function handleLogin(){
-   
+    
     // Add login logic here
     try{
       const res = await axios.post("http://localhost:3000/auth/login",{
@@ -24,7 +24,7 @@ function Login() {
       });
       console.log(res.data)
       dispatch(addUser(res.data));
-      navigate("/profile");
+      navigate("/feed");
     }
     catch(err){
       console.log("Login failed:", err);
@@ -40,7 +40,7 @@ function Login() {
         </div>
         <span className="text-center text-slate-500 -mt-4">Please login to continue</span>
         <fieldset className="fieldset">
-          <legend className="fieldset-legend">Email {email}</legend>
+          <legend className="fieldset-legend">Email</legend>
           <input type="text" className="input" placeholder="Your email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
         </fieldset>
         <fieldset className="fieldset">

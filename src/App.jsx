@@ -1,5 +1,7 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import EditProfile from "./components/EditProfile";
+import Feed from "./components/Feed";
 import { Routes, Route } from "react-router";
 import Profile from "./components/Profile";
 import Signup from "./components/Signup";
@@ -19,6 +21,8 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/register" element={<Signup />} />
               <Route path="/login" element={<Login />} />
+               <Route path="/feed" element={<Feed />} />
+               <Route path="/edit" element={<EditProfile />} />
             </Route>
           </Routes>
         </BrowserRouter>

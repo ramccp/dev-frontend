@@ -1,6 +1,8 @@
+import { Link } from "react-router";
 const ProfileCard = ({ user }) => {
   return (
-    <div className="w-8/12 mx-auto my-10">
+    <div className="w-8/12 mx-auto my-10 relative">
+      <Link to="/edit"><button className="absolute z-100 right-0 btn btn-primary">Edit Profile</button></Link>
       <ul className="list bg-base-100 rounded-box shadow-md">
         <li className="p-4 pb-2 text-lg opacity-60 tracking-wide">
           User Profile
