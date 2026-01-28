@@ -1,21 +1,34 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import UserCard from "./UserCard";
 
 function EditProfile() {
   const user = useSelector((store) => store.user);
-  const [firstName, setFirstName] = useState(user.firstName);
-  const [lastName, setLastName] = useState(user.lastName);
-  const [bio, setBio] = useState(user.bio);
-  const [avatar, setAvatar] = useState(user.avatar);
-  const [age, setAge] = useState(user.age);
-  const [gender, setGender] = useState(user.gender);
+  const [firstName, setFirstName] = useState(user?.firstName);
+  const [lastName, setLastName] = useState(user?.lastName);
+  const [bio, setBio] = useState(user?.bio);
+  const [avatar, setAvatar] = useState(user?.avatar);
+  const [age, setAge] = useState(user?.age);
+  const [gender, setGender] = useState(user?.gender);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (user) {
+      setFirstName(user.firstName);
+      setLastName(user.lastName);
+      setBio(user.bio);
+      setAvatar(user.avatar);
+      setAge(user.age);
+      setGender(user.gender);
+    }
+  }, [user]);
 
   async function handleUpdate() {
     try {
@@ -47,6 +60,10 @@ function EditProfile() {
     //     setErrorMessage(res.data?.trim("ERROR :"))
     // }
   }
+  if(!user){
+      return <h1 className="my-10 text-xl">Please login to view this page!</h1>
+    }
+  
 
   return (
     <>

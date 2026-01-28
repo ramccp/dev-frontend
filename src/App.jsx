@@ -10,6 +10,8 @@ import Login from "./components/Login";
 import { BrowserRouter } from "react-router";
 import { Provider } from "react-redux";
 import store from "./utils/store";
+import ConnectionRequests from "./components/ConnectionRequests";
+import UserConnections from "./components/UserConnections";
 function App() {
   return (
     <>
@@ -23,6 +25,8 @@ function App() {
               <Route path="/login" element={<Login />} />
                <Route path="/feed" element={<Feed />} />
                <Route path="/edit" element={<EditProfile />} />
+               <Route path="/requests" element={<ConnectionRequests />} />
+               <Route path="/connections" element={<UserConnections />} />
             </Route>
           </Routes>
         </BrowserRouter>
