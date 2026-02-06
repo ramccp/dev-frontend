@@ -7,7 +7,7 @@ function UserConnections() {
   const dispatch = useDispatch();
   const connections = useSelector((store) => store.connection);
   async function fetchUserConnections() {
-    const res = await axios.get("http://localhost:3000/user/connections", {
+    const res = await axios.get("/api/user/connections", {
       withCredentials: true,
     });
     console.log(res.data.data);

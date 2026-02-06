@@ -10,7 +10,7 @@ function Navbar(){
   const user = useSelector((store)=>store.user);
   async function handleLogout(){
     try{
-      await axios.post("http://localhost:3000/auth/logout",{},{withCredentials:true})
+      await axios.post("/api/auth/logout",{},{withCredentials:true})
       dispatch(removeUser());
       navigate("/login")
     }

@@ -33,7 +33,7 @@ function EditProfile() {
   async function handleUpdate() {
     try {
       const res = await axios.patch(
-        "http://localhost:3000/profile/edit",
+        "/api/profile/edit",
         {
           firstName,
           lastName,

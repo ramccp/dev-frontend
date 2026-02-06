@@ -9,14 +9,14 @@ const requests = useSelector((store)=>store.request);
 const dispatch = useDispatch();
 
 async function handleRequest(status,connectionId){
-    const res = await axios.post('http://localhost:3000/connection/review/'+status+'/'+connectionId,{}, { withCredentials: true });
+    const res = await axios.post('/api/connection/review/'+status+'/'+connectionId,{}, { withCredentials: true });
     console.log(res.data);
     dispatch(clearFromRequests(connectionId));
 }
 
 async function fetchUserRequests(){
     console.log("JDSJDHJS")
-    const res = await axios.get('http://localhost:3000/user/requests',{withCredentials:true})
+    const res = await axios.get('/api/user/requests',{withCredentials:true})
     console.log(res.data.data);
     dispatch(addToRequests(res.data.data));
 }

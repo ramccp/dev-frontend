@@ -6,7 +6,7 @@ function UserCard({ firstName, lastName, age, bio, gender, avatar, _id }) {
   const dispatch = useDispatch();
   async function handleFeedConnection(status) {
     const res = await axios.post(
-      "http://localhost:3000/connection/" + status + "/" + _id,
+      "/api/connection/" + status + "/" + _id,
       {},
       { withCredentials: true }
     );

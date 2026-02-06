@@ -10,7 +10,7 @@ function Main() {
   const user = useSelector((state) => state.user);
   async function fetchUserData() {
     // Logic to fetch user data
-    const res = await axios.get("http://localhost:3000/profile/view", {
+    const res = await axios.get("/api/profile/view", {
       withCredentials: true,
     });
     console.log("Fetched user data:", res.data);

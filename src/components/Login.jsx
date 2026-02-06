@@ -16,7 +16,7 @@ function Login() {
     
     // Add login logic here
     try{
-      const res = await axios.post("http://localhost:3000/auth/login",{
+      const res = await axios.post("/api/auth/login",{
         emailId:email,
         password
       },{
